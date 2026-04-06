@@ -185,6 +185,41 @@ select {
   padding: 1rem 0.5rem;
 }
 
+.under-construction-banner {
+  position: absolute;
+  top: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, rgba(255, 142, 114, 0.95), rgba(228, 99, 74, 0.95));
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(228, 99, 74, 0.4);
+  border: 1px solid rgba(255, 200, 150, 0.4);
+}
+
+.construction-icon {
+  font-size: 1.4rem;
+  animation: pulse-bounce 2s ease-in-out infinite;
+}
+
+.under-construction-banner p {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fff6f2;
+  letter-spacing: 0.02em;
+}
+
+@keyframes pulse-bounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
 .hero-mark::before {
   content: "";
   position: absolute;
@@ -975,6 +1010,85 @@ select {
   border-bottom-right-radius: 2.3rem;
 }
 
+.nexus-shop-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.nexus-description {
+  background:
+    radial-gradient(circle at top left, rgba(122, 209, 191, 0.12), transparent 15rem),
+    linear-gradient(135deg, rgba(26, 64, 76, 0.88), rgba(12, 33, 40, 0.9)),
+    var(--surface);
+  border: 1px solid rgba(189, 231, 224, 0.16);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  padding: 1.8rem;
+}
+
+.nexus-description p {
+  margin: 0 0 1.2rem;
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+
+.nexus-description p:last-child {
+  margin-bottom: 0;
+}
+
+.nexus-features {
+  background:
+    radial-gradient(circle at bottom right, rgba(255, 142, 114, 0.12), transparent 15rem),
+    linear-gradient(135deg, rgba(35, 52, 79, 0.88), rgba(16, 34, 46, 0.92)),
+    var(--surface);
+  border: 1px solid rgba(189, 231, 224, 0.16);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  padding: 1.8rem;
+}
+
+.nexus-features h3 {
+  margin: 0 0 1.2rem;
+  font-family: var(--display);
+  font-size: 1.24rem;
+  font-weight: 700;
+}
+
+.features-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.features-list li {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 0.9rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.features-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.features-list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -1126,7 +1240,8 @@ select {
 @media (max-width: 980px) {
   .hero,
   .product-grid,
-  .principle-grid {
+  .principle-grid,
+  .nexus-shop-content {
     grid-template-columns: 1fr;
   }
 }
